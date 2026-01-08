@@ -3,14 +3,16 @@ import Searchbar from "../components/SearchBar";
 
 const Navbar = () => {
   return (
-    <div className="flex w-full justify-between">
-      <nav className="text-white p-4 w-2/4 max-w-[400px] flex justify-around">
-        <button className="mr-4 font-bold">Music</button>
-        <button className="mr-4 font-bold">Podcast</button>
-        <button className="mr-4 font-bold">Live</button>
-        <button className="mr-4 font-bold">Radio</button>
+    <div className="flex w-full justify-between items-center mb-8 sticky top-0 z-10 py-4 bg-black/40 backdrop-blur-md -mx-4 px-8 border-b border-white/5">
+      <nav className="flex gap-8 text-gray-400 font-medium text-sm">
+        <button className="text-white border-b-2 border-red-500 pb-1">Music</button>
+        <button className="hover:text-white transition-colors">Podcast</button>
+        <button className="hover:text-white transition-colors">Live</button>
+        <button className="hover:text-white transition-colors">Radio</button>
       </nav>
-      <Searchbar />
+      <div className="w-1/3 min-w-[300px]">
+        <Searchbar />
+      </div>
     </div>
   );
 };

@@ -2,12 +2,76 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  body {
+    @apply bg-black text-white font-sans overflow-hidden antialiased;
+  }
+}
+
 @layer utilities {
+  .glass {
+    @apply bg-white bg-opacity-5 backdrop-blur-lg border border-white/10;
+  }
+
+  .glass-heavy {
+    @apply bg-black bg-opacity-60 backdrop-blur-xl border-r border-white/5;
+  }
+
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
+
   .no-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-gray-700 rounded-full hover:bg-gray-500 transition-colors;
+  }
+}
+
+/* Range Slider Styling */
+input[type=range] {
+  -webkit-appearance: none;
+  /* Hides the slider so that custom slider can be made */
+  background: transparent;
+  /* Otherwise white in Chrome */
+  cursor: pointer;
+  /* Keep cursor pointer */
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: pointer;
+  margin-top: -4px;
+  /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 4px;
+  /* Changed from 1 to 4px */
+  cursor: pointer;
+  background: transparent;
+  /* Changed from gray to transparent to allow inline style gradient */
+  border-radius: 2px;
+  /* Changed from lg to 2px */
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+  @apply bg-red-600;
 }

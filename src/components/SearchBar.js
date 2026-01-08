@@ -3,13 +3,15 @@ import { CiSearch } from "react-icons/ci";
 
 const Searchbar = () => {
   return (
-    <div className="flex items-center w-full max-w-[500px]">
-      <input
-        type="text"
-        placeholder="Search"
-        className="text-white w-full focus:outline-none bg-red-950 rounded-s-full p-1.5 px-4"
-      />
-      <CiSearch size={20} className="px-4 p-1 text-white w-16 h-9 bg-red-950 rounded-e-full" />
+    <div className="flex items-center w-full group">
+      <div className="relative w-full">
+        <input
+          type="text"
+          placeholder="Search for artists, songs, or albums"
+          className="w-full bg-white/10 border border-white/5 text-gray-200 placeholder-gray-500 rounded-full py-2.5 pl-5 pr-12 focus:outline-none focus:bg-white/15 focus:border-white/10 transition-all text-sm"
+        />
+        <CiSearch className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 group-hover:text-white transition-colors" size={20} />
+      </div>
     </div>
   );
 };

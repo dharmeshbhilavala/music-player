@@ -7,30 +7,30 @@ import { MdLogout } from "react-icons/md";
 
 export const SIDE_BAR_MENU = [
   {
-    icon: <AiFillHome className="text-red-700" size={20} />,
+    icon: <AiFillHome size={20} />,
     name: "Home",
   },
   {
-    icon: <IoMdTrendingUp className="text-red-700" size={20} />,
+    icon: <IoMdTrendingUp size={20} />,
     name: "Trends",
   },
   {
-    icon: <BiSolidMusic className="text-red-700" size={20} />,
+    icon: <BiSolidMusic size={20} />,
     name: "Library",
   },
   {
-    icon: <AiFillCompass className="text-red-700" size={20} />,
+    icon: <AiFillCompass size={20} />,
     name: "Discover",
   },
 ];
 
 export const SIDE_BAR_GENERAL_MENU = [
   {
-    icon: <AiFillSetting className="text-red-700" size={20} />,
+    icon: <AiFillSetting size={20} />,
     name: "Settings",
   },
   {
-    icon: <MdLogout className="text-red-700" size={20} />,
+    icon: <MdLogout size={20} />,
     name: "Log Out",
   },
 ];
@@ -38,6 +38,7 @@ export const SIDE_BAR_GENERAL_MENU = [
 export const SONG_LIST_TABLE_HEADER = ["#", "Title", "Playing", "Time", "Album"];
 
 export const formatTime = (seconds) => {
+  if (!seconds || isNaN(seconds)) return "0:00";
   const minutes = Math.floor(seconds / 60);
   const secs = Math.floor(seconds % 60);
   return `${minutes}:${secs < 10 ? "0" : ""}${secs}`;
